@@ -1,0 +1,48 @@
+.blockInfo {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    height: 116px;
+    border-radius: 8px;
+}
+
+.imgBlock {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.rightBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.titleStocks {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.buttonBlockInfo {
+    border-radius: 8px;
+    text-align: center;
+    background-color: #996C59;
+    color: white;
+    height: 32px;
+    width: 100%;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    text-align: end;
+}

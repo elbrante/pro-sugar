@@ -1,0 +1,23 @@
+.wrapperDateCalendar {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.firstBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 0 auto;
+}
+
+.wrapSkip {
+    margin-bottom: 20px;
+}

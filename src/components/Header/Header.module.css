@@ -1,0 +1,19 @@
+.header {
+    width: 100%;
+    display: flex;
+}
+
+.wrapp {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titleText {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+}
+.wrapIcon {
+    height: 17px;
+}

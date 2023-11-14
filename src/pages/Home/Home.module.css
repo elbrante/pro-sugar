@@ -1,0 +1,15 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.homeImg {
+    width: 100%;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

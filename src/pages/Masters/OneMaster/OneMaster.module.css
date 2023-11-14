@@ -1,0 +1,54 @@
+.oneMaster {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+
+    padding: 16px;
+    align-items: center;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.leftBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.firstBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.leftBlockInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detailInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 10px;
+    font-weight: 300;
+    line-height: 16px;
+    margin-left: 58px;
+}
+
+.open svg {
+    animation: open-button-animate 1s ease alternate;
+    transform: rotate(180deg);
+}
+
+.close svg {
+    animation: close-button-animate 1s ease alternate;
+    transform: rotate(0deg);
+}

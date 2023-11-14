@@ -1,0 +1,14 @@
+.learn {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+
+.firstBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1 0 auto;
+}
