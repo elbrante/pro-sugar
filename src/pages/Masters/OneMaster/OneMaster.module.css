@@ -52,3 +52,13 @@
     animation: close-button-animate 1s ease alternate;
     transform: rotate(0deg);
 }
+
+.buttonBlockInfo {
+    margin-top: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #996C59;
+    color: white;
+    height: 32px;
+    width: 100%;
+}

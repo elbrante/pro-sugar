@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import cl from './Stocks.module.css'
 import {Header} from "../../components/Header";
 import img1 from "../../assets/allservices.png";
 import {BlockInfoPrice} from "../../components/BlockInfoPrice";
+import {getStocks} from "../../api/api";
 
 const listBlock = [
     {name: 'Голень + бикини + подмышки', img: img1, price: 1800},
@@ -11,13 +12,27 @@ const listBlock = [
 ]
 
 export const Stocks = () => {
+
+    const [stocks, setStocks] = useState([])
+
+    useEffect(() => {
+        getStocks().then((res) => {
+            console.log(res.data)
+            setStocks(res.data)
+        })
+    }, []);
+
     return (
         <div className={cl.allServices}>
             <div className={cl.firstBlock}>
                 <Header text={'Акции'} link={'/services'}/>
                 {
-                    listBlock.map((data, index) => {
-                        return <BlockInfoPrice price={data.price} name={data.name} img={data.img} key={index} stocks={true}/>
+                    stocks.map((data, index) => {
+                        return <BlockInfoPrice
+                            price={data.price}
+                            name={data.nameStocks}
+                            key={index}
+                            stocks={true}/>
                     })
                 }
             </div>

@@ -21,7 +21,7 @@ export const Services = () => {
                 <Header text={'Услуги'} link={'/address'}/>
                 {
                     listBlock.map((data, index) => {
-                        return <BlockInfo name={data.name} link={data.link} imgBlock={data.img} key={index} />
+                        return <BlockInfo name={data.name} link={data.link} imgBlock={data.img} key={index}/>
                     })
                 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import cl from './AllServices.module.css'
 import {Header} from "../../components/Header";
 import {BlockInfo} from "../../components/BlockInfo";
@@ -7,6 +7,7 @@ import img1 from "../../assets/allservices.png";
 import img2 from '../../assets/us.png'
 import img3 from '../../assets/brov.png'
 import {BlockInfoPrice} from "../../components/BlockInfoPrice";
+import {getAllServices} from "../../api/api";
 
 
 const listBlock = [
@@ -17,13 +18,29 @@ const listBlock = [
 ]
 
 export const AllServices = () => {
+
+    const [allServices, setAllServices] = useState([])
+
+    useEffect(() => {
+        getAllServices().then((res) => {
+            console.log(res.data)
+            setAllServices(res.data)
+        })
+    }, []);
+
     return (
         <div className={cl.allServices}>
             <div className={cl.firstBlock}>
                 <Header text={'Все услуги'} link={'/services'}/>
                 {
-                    listBlock.map((data, index) => {
-                        return <BlockInfoPrice price={data.price} name={data.name} img={data.img} key={index}/>
+                    allServices.map((data, index) => {
+                        return (
+                            <BlockInfoPrice
+                                price={data.price}
+                                name={data.nameService}
+                                key={index}
+                            />
+                        )
                     })
                 }
 

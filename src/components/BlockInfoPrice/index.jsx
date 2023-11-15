@@ -2,7 +2,8 @@ import React from 'react';
 import cl from "../BlockInfo/BlockInfo.module.css";
 import img from "../../assets/allservices.png";
 
-export const BlockInfoPrice = ({name, img, price, stocks}) => {
+
+export const BlockInfoPrice = ({name, price, stocks}) => {
 
     return (
         <div className={cl.blockInfo}>
