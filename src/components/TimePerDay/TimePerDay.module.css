@@ -1,0 +1,34 @@
+.time_day{
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.time_day > p{
+    font-size: 1.25em;
+}
+
+.time_day ul{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.time_day ul > li{
+    border: 1px solid #dadada;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 15px;
+}
+
+.active{
+    color: #fff;
+    background-color: #1665ae;
+    border-radius: 50px;
+}
