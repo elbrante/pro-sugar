@@ -62,7 +62,7 @@ export const postMasters = (name, level, experience) => {
         level: level,
         experience: experience
     }).then((res) => {
-        console.log(res.data)
+        console.log(res)
     }).catch((err) => {
         console.log(err)
     })
@@ -80,7 +80,7 @@ export const postAddress = (address) => {
 
 export const postAllServices = (nameService, price) => {
     axios.post('/allServices', {
-        nameService: nameService,
+        name: nameService,
         price: price,
     }).then((res) => {
         console.log(res)
@@ -90,7 +90,7 @@ export const postAllServices = (nameService, price) => {
 }
 export const postStocks = (nameStocks, price) => {
     axios.post('/stocks', {
-        nameStocks: nameStocks,
+        name: nameStocks,
         price: price,
     }).then((res) => {
         console.log(res)
@@ -101,12 +101,12 @@ export const postStocks = (nameStocks, price) => {
 
 export const postLearn = (nameLearn, price) => {
     axios.post('/learn', {
-        nameLearn: nameLearn,
-        price: price,
+        name: nameLearn,
+        price: price
     }).then((res) => {
         console.log(res)
     }).catch((res) => {
-        console.log(res.error)
+        console.log(res)
     })
 }
 

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import cl from "../BlockInfo/BlockInfo.module.css";
 import img from "../../assets/allservices.png";
 import {postAllServices, postLearn, postStocks} from "../../api/api";
 
 
 export const BlockInfoPrice = ({name, price, stocks, learn, allServices}) => {
+
+    useEffect(() => {
+        console.log(name, price)
+    },[])
 
     return (
         <div className={cl.blockInfo}>
