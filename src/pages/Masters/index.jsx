@@ -5,7 +5,7 @@ import {DateCalendar} from "@mui/x-date-pickers";
 import {SkipButton} from "../../components/SkipButton";
 import imgMaster from '../../assets/imgMaster.png'
 import {OneMaster} from "./OneMaster";
-import {getMasters} from "../../api/api";
+import {getMasters, getSrcImg, getSrcImgMasters} from "../../api/api";
 
 const listMaster = [
     {img: imgMaster, name: 'Кравченко Оксана Александровна', level: 'топ мастер', experience: 9},

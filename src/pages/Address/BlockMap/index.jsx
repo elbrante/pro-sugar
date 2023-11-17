@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import cl from './BlockMap.module.css'
 import {IBrownAccordion, IBrownAddress} from "../../../assets/icons";
 import classNames from "classnames";
+import {getAddress, postAddress} from "../../../api/api";
 
 export const BlockMap = () => {
 
     const [visible, setVisible] = useState(false)
+    const [address, setAddress] = useState('')
+
+    useEffect(() => {
+        getAddress().then((res) => {
+            setAddress(res.data)
+        })
+    }, []);
 
     return (
         <div className={cl.wrapBlockMap} onClick={() => setVisible(!visible)}>
@@ -15,7 +23,8 @@ export const BlockMap = () => {
                     [cl.address]: !visible,
                     [cl.wrappText]: visible
                 })}>
-                    г.Казань, ул.Петербургская 9, ТЦ "Республика"
+                    {/*г.Казань, ул.Петербургская 9, ТЦ "Республика"*/}
+                    {address.address}
                 </span>
                 <button className={classNames({
                     [cl.open]: visible,
@@ -35,7 +44,7 @@ export const BlockMap = () => {
                             className={cl.map}
                         >
                         </iframe>
-                        <button className={cl.buttonBlockInfo}>
+                        <button className={cl.buttonBlockInfo} onClick={() => postAddress(address)}>
                             Выбрать
                         </button>
                     </div>
