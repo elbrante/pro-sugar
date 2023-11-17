@@ -24,6 +24,7 @@ export const AllServices = () => {
     useEffect(() => {
         getAllServices().then((res) => {
             setAllServices(res.data)
+            console.log(res.data)
         })
     }, []);
 
@@ -39,6 +40,7 @@ export const AllServices = () => {
                                 name={data.nameService}
                                 key={index}
                                 allServices={true}
+                                id={data.id}
                             />
                         )
                     })

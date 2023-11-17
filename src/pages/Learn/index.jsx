@@ -25,7 +25,7 @@ export const Learn = () => {
         <div className={cl.learn}>
             <div className={cl.firstBlock}>
                 <Header text={'Обучение'} link={'/services'}/>
-                <BlockInfoPrice price={learn.price} name={learn.nameLearn} learn={true}/>
+                <BlockInfoPrice price={learn.price} name={learn.nameLearn} learn={true} id={learn.id}/>
             </div>
 
         </div>

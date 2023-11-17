@@ -32,7 +32,9 @@ export const Stocks = () => {
                             price={data.price}
                             name={data.nameStocks}
                             key={index}
-                            stocks={true}/>
+                            stocks={true}
+                            id={data.id}
+                        />
                     })
                 }
             </div>

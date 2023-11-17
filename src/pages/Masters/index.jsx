@@ -33,7 +33,9 @@ export const Masters = () => {
                         return <OneMaster key={index}
                                           name={data.name}
                                           level={data.level}
-                                          experience={data.experience}/>
+                                          experience={data.experience}
+
+                        />
                     })
                 }
 
