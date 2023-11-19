@@ -1,4 +1,5 @@
 import axios, * as others from 'axios';
+import {user_id} from "./dataUser";
 
 axios.defaults.baseURL = 'https://thx-api-server.ru/prosugar'
 
@@ -56,11 +57,10 @@ export const getAddress = () => {
 
 }
 
-export const postMasters = (name, level, experience) => {
+export const postMasters = (user_id, master_id) => {
     axios.post('/masters', {
-        name: name,
-        level: level,
-        experience: experience
+        user_id: user_id,
+        id: master_id,
     }).then((res) => {
         console.log(res)
     }).catch((err) => {
@@ -78,20 +78,20 @@ export const postAddress = (address) => {
     })
 }
 
-export const postAllServices = (nameService, price) => {
+export const postAllServices = (user_id, service_id) => {
     axios.post('/allServices', {
-        name: nameService,
-        price: price,
+        user_id: user_id,
+        id: service_id,
     }).then((res) => {
         console.log(res)
     }).catch((res) => {
         console.log(res.error)
     })
 }
-export const postStocks = (nameStocks, price) => {
+export const postStocks = (user_id, stock_id) => {
     axios.post('/stocks', {
-        name: nameStocks,
-        price: price,
+        user_id: user_id,
+        id: stock_id,
     }).then((res) => {
         console.log(res)
     }).catch((res) => {
@@ -99,14 +99,19 @@ export const postStocks = (nameStocks, price) => {
     })
 }
 
-export const postLearn = (nameLearn, price) => {
+export const postLearn = (user_id, learn_id) => {
     axios.post('/learn', {
-        name: nameLearn,
-        price: price
+        user_id: user_id,
+        id: learn_id,
     }).then((res) => {
         console.log(res)
     }).catch((res) => {
         console.log(res)
     })
+}
+
+export const getDataUser = (user_id) => {
+    const response = axios.get(`/user_state/${user_id}`)
+    return response
 }
 
