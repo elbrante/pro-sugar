@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import cl from './OneMaster.module.css'
 import {IAccordion} from "../../../assets/icons";
 import classNames from "classnames";
+import {user_id} from '../../../api/dataUser'
 
 import imgMaster from '../../../assets/imgMaster.png'
 import {getSrcImg, postMasters} from "../../../api/api";
@@ -17,6 +18,8 @@ export const OneMaster = ({name, level, experience, id}) => {
     function postRequestMaster(name, level, experience) {
         console.log(name, level, experience)
     }
+
+
 
 
     return (
@@ -41,7 +44,7 @@ export const OneMaster = ({name, level, experience, id}) => {
                                 <span>Квалификация: {level}</span>
                                 <span>Стаж: {experience} лет</span>
                             </div>
-                            <button className={cl.buttonBlockInfo} onClick={() => postMasters(name, level, experience)}>
+                            <button className={cl.buttonBlockInfo} onClick={() => postMasters(user_id, id)}>
                                 Выбрать
                             </button>
                         </>

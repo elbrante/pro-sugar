@@ -5,7 +5,7 @@ import {DateCalendar} from "@mui/x-date-pickers";
 import {SkipButton} from "../../components/SkipButton";
 import imgMaster from '../../assets/imgMaster.png'
 import {OneMaster} from "./OneMaster";
-import {getMasters, getSrcImg, getSrcImgMasters} from "../../api/api";
+import {getMasters} from "../../api/api";
 
 const listMaster = [
     {img: imgMaster, name: 'Кравченко Оксана Александровна', level: 'топ мастер', experience: 9},
@@ -18,6 +18,7 @@ export const Masters = () => {
 
     useEffect(() => {
         getMasters().then(res => {
+            console.log(res.data)
             setMasters(res.data)
         })
     }, []);
@@ -34,6 +35,7 @@ export const Masters = () => {
                                           name={data.name}
                                           level={data.level}
                                           experience={data.experience}
+                                          id={data.id}
 
                         />
                     })

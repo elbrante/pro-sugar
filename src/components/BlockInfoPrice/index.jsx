@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import cl from "../BlockInfo/BlockInfo.module.css";
 import img from "../../assets/allservices.png";
 import {getSrcImg, postAllServices, postLearn, postStocks} from "../../api/api";
+import {user_id} from "../../api/dataUser";
 
 
 export const BlockInfoPrice = ({name, price, stocks, learn, allServices, id}) => {
@@ -25,9 +26,9 @@ export const BlockInfoPrice = ({name, price, stocks, learn, allServices, id}) =>
 
                 <span className={cl.price}>{price}₽</span>
 
-                {stocks ? <button className={cl.buttonBlockInfo} onClick={() => postStocks(name, price)}>Выбрать</button> : ''}
-                {allServices ? <button className={cl.buttonBlockInfo} onClick={() => postAllServices(name, price)}>Выбрать</button> : ''}
-                {learn ? <button className={cl.buttonBlockInfo} onClick={() => postLearn(name, price)}>Выбрать</button> : ''}
+                {stocks ? <button className={cl.buttonBlockInfo} onClick={() => postStocks(user_id, id)}>Выбрать</button> : ''}
+                {allServices ? <button className={cl.buttonBlockInfo} onClick={() => postAllServices(user_id, id)}>Выбрать</button> : ''}
+                {learn ? <button className={cl.buttonBlockInfo} onClick={() => postLearn(user_id, id)}>Выбрать</button> : ''}
 
 
 
