@@ -16,7 +16,6 @@ export const Home = () => {
 
     useEffect(() => {
         //непонятно, откуда брать user_id. Пока добавил его в dataUser.js, чтобы хоть что-то было
-
         getDataUser(1).then((res) => {
             console.log(res.data)
         })
