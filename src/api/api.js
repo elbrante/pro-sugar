@@ -68,9 +68,10 @@ export const postMasters = (user_id, master_id) => {
     })
 }
 
-export const postAddress = (address) => {
+export const postAddress = (address_id, user_id) => {
     axios.post('/address', {
-        address: address,
+        address_id: address_id,
+        user_id: user_id,
     }).then((res) => {
         console.log(res)
     }).catch((res) => {

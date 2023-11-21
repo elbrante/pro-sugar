@@ -50,13 +50,14 @@ export const Service = () => {
             })
 
             getLearn().then((learn) => {
-                //Нужно получать список обучений, пока закоментил на будущее
-                // const listLearn = learn.data
-                // const newLearn = listLearn.find((elem) => {
-                //     return elem.id === learnID
-                // })
-                setLearn(learn.data.nameLearn)
-                newArr.push(learn.data.nameLearn)
+                const listLearn = learn.data
+                if (learnID !== -1) {
+                    const newLearn = listLearn.find((elem) => {
+                        return elem.id === learnID
+                    })
+                    setLearn(newLearn.nameLearn)
+                    newArr.push(learn.data.nameLearn)
+                }
 
             })
 

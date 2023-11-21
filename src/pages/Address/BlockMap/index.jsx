@@ -3,18 +3,22 @@ import cl from './BlockMap.module.css'
 import {IBrownAccordion, IBrownAddress} from "../../../assets/icons";
 import classNames from "classnames";
 import {getAddress, postAddress} from "../../../api/api";
+import {user_id} from "../../../api/dataUser";
 
-export const BlockMap = () => {
+export const BlockMap = ({id, address}) => {
 
     const [visible, setVisible] = useState(false)
-    const [address, setAddress] = useState('')
+    // const [address, setAddress] = useState('')
+    //
+    // useEffect(() => {
+    //     getAddress().then((res) => {
+    //         setAddress(res.data)
+    //
+    //     })
+    // }, []);
 
-    useEffect(() => {
-        getAddress().then((res) => {
-            setAddress(res.data)
-            console.log(res)
-        })
-    }, []);
+    console.log(address)
+    console.log(id)
 
     return (
         <div className={cl.wrapBlockMap} onClick={() => setVisible(!visible)}>
@@ -25,7 +29,7 @@ export const BlockMap = () => {
                     [cl.wrappText]: visible
                 })}>
                     {/*г.Казань, ул.Петербургская 9, ТЦ "Республика"*/}
-                    {address.address}
+                    {address}
                 </span>
                 <button className={classNames({
                     [cl.open]: visible,
@@ -45,7 +49,7 @@ export const BlockMap = () => {
                             className={cl.map}
                         >
                         </iframe>
-                        <button className={cl.buttonBlockInfo} onClick={() => postAddress(address)}>
+                        <button className={cl.buttonBlockInfo} onClick={() => postAddress(id, user_id)}>
                             Выбрать
                         </button>
                     </div>
