@@ -12,6 +12,7 @@ export const BlockMap = () => {
     useEffect(() => {
         getAddress().then((res) => {
             setAddress(res.data)
+            console.log(res)
         })
     }, []);
 

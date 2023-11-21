@@ -19,12 +19,12 @@ const listButton = [
 
 export const Home = () => {
 
-    // useEffect(() => {
-    //     //непонятно, откуда брать user_id. Пока добавил его в dataUser.js, чтобы хоть что-то было
-    //     getDataUser(user_id).then((res) => {
-    //         console.log(res.data)
-    //     })
-    // }, []);
+    useEffect(() => {
+        //непонятно, откуда брать user_id. Пока добавил его в dataUser.js, чтобы хоть что-то было
+        getDataUser(user_id).then((res) => {
+            console.log(res.data)
+        })
+    }, []);
 
 
     return (
