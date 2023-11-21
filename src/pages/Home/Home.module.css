@@ -8,8 +8,28 @@
     width: 100%;
 }
 
+.topBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .buttonGroup {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.buttonHome {
+    margin-top: 30px;
+    width: 100%;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    color: white;
+    background-color: #996C59;
+    border-radius: 8px;
+
+    flex: 0 0 auto;
 }

@@ -36,8 +36,8 @@ export const AllServices = () => {
                     allServices.map((data, index) => {
                         return (
                             <BlockInfoPrice
-                                price={data.price}
-                                name={data.nameService}
+                                price={data.description}
+                                name={data.name}
                                 key={index}
                                 allServices={true}
                                 id={data.id}
