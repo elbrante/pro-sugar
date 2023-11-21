@@ -18,7 +18,7 @@ export const Masters = () => {
 
     useEffect(() => {
         getMasters().then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             setMasters(res.data)
         })
     }, []);
