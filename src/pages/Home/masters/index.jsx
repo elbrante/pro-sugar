@@ -6,7 +6,7 @@ import {getDataUser, getMasters} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
 
 
-export const Masters = () => {
+export const Masters = ({setDataMasters}) => {
 
     const [nameSelectedMaster, setNameSelectedMaster] = useState('')
 
@@ -20,6 +20,7 @@ export const Masters = () => {
                     return master.id === selectedMasterId
                 })
                 setNameSelectedMaster(master.name)
+                setDataMasters(master.name)
             })
         })
     }, []);

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import cl from './Home.module.css'
 import homeImg from '../../assets/homeIMG.png'
 import {LinkButton} from "../../components/LinkButton";
@@ -23,19 +23,48 @@ export const Home = () => {
     useEffect(() => {
         //непонятно, откуда брать user_id. Пока добавил его в dataUser.js, чтобы хоть что-то было
         getDataUser(user_id).then((res) => {
-            console.log(res.data)
+
         })
     }, []);
 
-    // function send_push(data) {
-    //     var userMessage = ""
-    //     // Тут данные заказа пользователя
-    //     for (var i = 0; i < data.length; i++) {
-    //         userMessage += (i + 1).toString() + ".\n"
-    //         userMessage += "Товар: " + data[i].product_name + "\n"
-    //         userMessage += "Размер: " + data[i].sizes[0] + "\n"
-    //         userMessage += "Стоимость: " + data[i].price + "\n"
-    //     }
+    const [dataAddress, setDataAddress] = useState('')
+    const [dataMasters, setDataMasters] = useState('')
+    const [dataService, setDataService] = useState([])
+    const [priceList, setPriceList] = useState([])
+
+    let sumPrice = 0
+    priceList.map(data => {
+        sumPrice += data
+    })
+
+
+    function send_push(address, masters, service, sumPrice) {
+
+
+        let serviceList = ''
+        for (let i = 0; i < service.length; i++) {
+            if (service[i] !== service.at(-1)) {
+                serviceList += service[i] + ', '
+            } else {
+                serviceList += service[i]
+            }
+        }
+
+        var userMessage = ""
+        userMessage += "1. Адрес: " + address + "\n"
+        userMessage += "2. Мастер: " + masters + "\n"
+        userMessage += "3. Услуги: " + serviceList + "\n"
+        userMessage += "\nИтого: " + sumPrice
+
+        console.log(userMessage)
+
+
+
+    }
+
+    send_push(dataAddress, dataMasters, dataService, sumPrice)
+
+
     //     userMessage += "\nИтого: " + sumPrice(data).toString()
     //
     //     userMessage += "\n\nБонусы пользователя: " + bonuses.toString();
@@ -63,15 +92,16 @@ export const Home = () => {
     // }
 
 
+
     return (
         <div className={cl.home}>
             <div className={cl.topBlock}>
                 <img src={homeImg} alt={'HomeImg'} className={cl.homeImg}/>
                 <div className={cl.buttonGroup}>
                     <Date/>
-                    <Address/>
-                    <Masters/>
-                    <Service/>
+                    <Address setDataAddress={setDataAddress}/>
+                    <Masters setDataMasters={setDataMasters}/>
+                    <Service setDataService={setDataService} setPriceList={setPriceList}/>
                 </div>
             </div>
 
