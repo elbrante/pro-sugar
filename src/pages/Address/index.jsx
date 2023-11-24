@@ -13,7 +13,6 @@ export const Address = () => {
 
     useEffect(() => {
         getAddress().then((res) => {
-            console.log(res.data)
             setAddressList(res.data)
         })
     }, []);

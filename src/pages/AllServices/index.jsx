@@ -24,7 +24,6 @@ export const AllServices = () => {
     useEffect(() => {
         getAllServices().then((res) => {
             setAllServices(res.data)
-            console.log(res.data)
         })
     }, []);
 

@@ -12,7 +12,7 @@ export const SkipButton = ({link}) => {
 
     return (
         <button onClick={handleClick} className={cl.skipButton}>
-            <span className={cl.text}>Пропустить</span>
+            <span className={cl.text}>Продолжить</span>
         </button>
     );
 };
