@@ -17,7 +17,6 @@ export const Stocks = () => {
 
     useEffect(() => {
         getStocks().then((res) => {
-            console.log(res.data)
             setStocks(res.data)
         })
     }, []);

@@ -5,25 +5,30 @@ import React, {useEffect, useState} from "react";
 import {getAllServices, getDataUser, getLearn, getMasters, getStocks} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
 
-export const Service = () => {
+export const Service = ({setDataService, setPriceList}) => {
 
     const [service, setService] = useState('')
     const [stock, setStock] = useState('')
     const [learn, setLearn] = useState('')
 
     const listSelected = []
+
     //это временное решение
     if (stock) {
         listSelected.push(stock)
+
     }
 
     if (service) {
         listSelected.push(service)
+
     }
 
     if (learn) {
         listSelected.push(learn)
+
     }
+
 
     const [arr, setArr] = useState([])
 
@@ -31,6 +36,7 @@ export const Service = () => {
         //newArr и setArr почему-то не выводятся, хотя в консоле данные есть. Пока решил сделать через listSelected
 
         const newArr = []
+        const pricesList = []
         getDataUser(user_id).then((res) => {
             // console.log(res.data)
             const serviceID = res.data.selected_service_id
@@ -45,6 +51,9 @@ export const Service = () => {
                     })
                     setService(services.name)
                     newArr.push(services.name)
+                    pricesList.push(services.description)
+
+
 
                 }
             })
@@ -56,7 +65,9 @@ export const Service = () => {
                         return elem.id === learnID
                     })
                     setLearn(newLearn.nameLearn)
-                    newArr.push(learn.data.nameLearn)
+                    newArr.push(newLearn.nameLearn)
+                    pricesList.push(newLearn.price)
+
                 }
 
             })
@@ -69,12 +80,17 @@ export const Service = () => {
                     })
                     setStock(newStock.nameStocks)
                     newArr.push(newStock.nameStocks)
+                    pricesList.push(newStock.price)
+
                 }
 
             })
 
         })
-        setArr(newArr)
+        setDataService(newArr)
+        setPriceList(pricesList)
+
+
 
     }, []);
 

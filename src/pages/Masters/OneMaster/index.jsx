@@ -15,13 +15,6 @@ export const OneMaster = ({name, level, experience, id}) => {
         setVisible(!visible)
     }
 
-    function postRequestMaster(name, level, experience) {
-        console.log(name, level, experience)
-    }
-
-
-
-
     return (
         <div className={cl.oneMaster}>
             <div className={cl.leftBlock}>

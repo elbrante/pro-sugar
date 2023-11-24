@@ -8,17 +8,6 @@ import {user_id} from "../../../api/dataUser";
 export const BlockMap = ({id, address}) => {
 
     const [visible, setVisible] = useState(false)
-    // const [address, setAddress] = useState('')
-    //
-    // useEffect(() => {
-    //     getAddress().then((res) => {
-    //         setAddress(res.data)
-    //
-    //     })
-    // }, []);
-
-    console.log(address)
-    console.log(id)
 
     return (
         <div className={cl.wrapBlockMap} onClick={() => setVisible(!visible)}>

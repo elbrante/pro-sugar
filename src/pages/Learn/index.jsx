@@ -16,7 +16,6 @@ export const Learn = () => {
 
     useEffect(() => {
         getLearn().then((res) => {
-            console.log(res.data)
             setLearn(res.data)
         })
     }, []);
