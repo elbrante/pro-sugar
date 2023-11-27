@@ -1,0 +1,49 @@
+.blockImg {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.descStock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #D3D3D3;
+    padding: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 29px;
+}
+
+.period {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.stockBlock {
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: rgba(255,255,255, 0.6);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nameStock {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}

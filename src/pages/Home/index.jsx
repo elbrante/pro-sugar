@@ -11,6 +11,9 @@ import {Masters} from "./masters";
 import {Service} from "./service";
 import axios from "axios";
 import {tg} from "../../hooks/useTelegram";
+import {SendButton} from "../../components/SendButton";
+import {MyPoints} from "./myPoints";
+import {BlockImg} from "./blockImg";
 
 const listButton = [
     {text: 'Выберите дату', link: '/date', icon: <IDate/>},
@@ -85,20 +88,20 @@ export const Home = () => {
     return (
         <div className={cl.home}>
             <div className={cl.topBlock}>
-                <img src={homeImg} alt={'HomeImg'} className={cl.homeImg}/>
+                {/*<img src={homeImg} alt={'HomeImg'} className={cl.homeImg}/>*/}
+                <BlockImg/>
                 <div className={cl.buttonGroup}>
-                    <Date/>
-                    <Address setDataAddress={setDataAddress}/>
+                    <MyPoints/>
                     <Masters setDataMasters={setDataMasters}/>
+                    <Date/>
                     <Service setDataService={setDataService} setPriceList={setPriceList}/>
+                    <Address setDataAddress={setDataAddress}/>
                 </div>
             </div>
 
-            <button className={cl.buttonHome} onClick={() => {
-                send_push(dataAddress, dataMasters, dataService, priceList)
-            }}>
+            <SendButton onClick={() => {send_push(dataAddress, dataMasters, dataService, priceList)}}>
                 Оставить заявку
-            </button>
+            </SendButton>
         </div>
     );
 };

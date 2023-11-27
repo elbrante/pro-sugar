@@ -1,9 +1,11 @@
 import cl from './Address.module.css'
 import {useNavigate} from "react-router-dom";
-import {IAddress} from "../../../assets/icons";
+import {GrayAddress, IAddress} from "../../../assets/icons";
 import React, {useEffect, useState} from "react";
 import {getAddress, getDataUser, getMasters} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
+import {WrapperBlock} from "../../../components/WrapperBlock";
+import {TextBlockInHome} from "../../../components/TextBlockInHome";
 
 export const Address = ({setDataAddress}) => {
 
@@ -30,20 +32,18 @@ export const Address = ({setDataAddress}) => {
     }
 
     return (
-        <div className={cl.linkButton} onClick={() => handleClick('/address')}>
-            <div className={cl.blockIcon}>
-                <IAddress/>
-            </div>
+        <WrapperBlock onClick={() => handleClick('/address')}>
+
+                <GrayAddress/>
 
             {
                 selectAddress
                     ?
-                    <span className={cl.text}>{selectAddress}</span>
+                    <TextBlockInHome>{selectAddress}</TextBlockInHome>
                     :
-                    <span className={cl.text}>Выберите адрес</span>
+                    <TextBlockInHome>Выберите адрес</TextBlockInHome>
             }
-
-        </div>
+        </WrapperBlock>
     );
 };
 

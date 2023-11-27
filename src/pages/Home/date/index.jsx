@@ -1,7 +1,9 @@
 import cl from './Date.module.css'
 import React from "react";
-import {IDate} from "../../../assets/icons";
+import {GrayDate, IDate} from "../../../assets/icons";
 import {useNavigate} from "react-router-dom";
+import {WrapperBlock} from "../../../components/WrapperBlock";
+import {TextBlockInHome} from "../../../components/TextBlockInHome";
 
 export const Date = () => {
 
@@ -12,9 +14,9 @@ export const Date = () => {
     }
 
     return (
-        <div className={cl.linkButton} onClick={() => handleClick('/date')}>
-            <IDate/>
-            <span className={cl.text}>Выберите дату</span>
-        </div>
+        <WrapperBlock onClick={() => handleClick('/date')}>
+            <GrayDate/>
+            <TextBlockInHome>Выберите дату</TextBlockInHome>
+        </WrapperBlock>
     );
 };

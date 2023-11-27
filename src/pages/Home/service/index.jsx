@@ -1,9 +1,11 @@
 import cl from './Service.module.css'
 import {useNavigate} from "react-router-dom";
-import {IMaster, IService} from "../../../assets/icons";
+import {GrayService, IMaster, IService} from "../../../assets/icons";
 import React, {useEffect, useState} from "react";
 import {getAllServices, getDataUser, getLearn, getMasters, getStocks} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
+import {WrapperBlock} from "../../../components/WrapperBlock";
+import {TextBlockInHome} from "../../../components/TextBlockInHome";
 
 export const Service = ({setDataService, setPriceList}) => {
 
@@ -103,8 +105,8 @@ export const Service = ({setDataService, setPriceList}) => {
     }
 
     return (
-        <div className={cl.linkButton} onClick={() => handleClick('/services')}>
-            <IService/>
+        <WrapperBlock onClick={() => handleClick('/services')}>
+            <GrayService/>
 
             {
                 listSelected.length > 0
@@ -113,16 +115,16 @@ export const Service = ({setDataService, setPriceList}) => {
 
                         listSelected.at(-1) === elem
                         ?
-                            <span className={cl.text} key={index}>{elem}</span>
+                            <TextBlockInHome key={index}>{elem}</TextBlockInHome>
                             :
-                            <span className={cl.text} key={index}>{elem},</span>
+                            <TextBlockInHome key={index}>{elem},</TextBlockInHome>
                     ))
                     :
-                    <span className={cl.text}>Выберите услугу</span>
+                    <TextBlockInHome>Выберите услугу</TextBlockInHome>
 
             }
 
-        </div>
+        </WrapperBlock>
     );
 };
 
