@@ -4,6 +4,7 @@ import {Header} from "../../components/Header";
 import {SkipButton} from "../../components/SkipButton";
 import {BlockMap} from "./BlockMap";
 import {getAddress} from "../../api/api";
+import {SendButton} from "../../components/SendButton";
 
 export const Address = () => {
 
@@ -20,7 +21,7 @@ export const Address = () => {
     return (
         <div className={cl.address}>
             <div className={cl.firstBlock}>
-                <Header text={'Адрес'} link={'/'}/>
+                <Header text={'Выберите адрес'} link={'/'}/>
 
                 {
                     addressList.map((data, index) => (
@@ -30,7 +31,7 @@ export const Address = () => {
 
             </div>
             <div className={cl.wrapSkip}>
-                <SkipButton link={'/services'}/>
+                <SendButton>Подтвердить</SendButton>
             </div>
         </div>
     );

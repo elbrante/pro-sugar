@@ -1,0 +1,21 @@
+.scoreJob {
+    display: flex;
+    flex-direction: column;
+}
+
+.topBlock {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(21, 16, 77, 1);
+}
+
+.bottomTitle {
+    font-size: 11px;
+    color: rgba(21, 16, 77, 1);
+}

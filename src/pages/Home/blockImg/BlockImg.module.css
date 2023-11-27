@@ -5,12 +5,19 @@
     position: relative;
 }
 
+.img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
 .descStock {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: #D3D3D3;
     padding: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .name {
@@ -47,3 +54,38 @@
     text-transform: uppercase;
 
 }
+
+.blockStock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    margin: auto;
+    width: 126px;
+    height: 30px;
+    background-color: rgba(42, 42, 44, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+    border-radius: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

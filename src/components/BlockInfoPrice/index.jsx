@@ -9,30 +9,19 @@ export const BlockInfoPrice = ({name, price, stocks, learn, allServices, id}) =>
 
     return (
         <div className={cl.blockInfo}>
-            {allServices ? <img src={getSrcImg.services(id)} className={cl.imgBlock}/> : ''}
-            {stocks ? <img src={getSrcImg.stocks(id)} className={cl.imgBlock}/> : ''}
-            {learn ? <img src={getSrcImg.learn(id)} className={cl.imgBlock}/> : ''}
 
 
             <div className={cl.rightBlock}>
-
-                {
-                    stocks
-                    ?
-                        <span className={cl.titleStocks}>{name}</span>
-                        :
-                        <span className={cl.title}>{name}</span>
-                }
-
+                <span className={cl.title}>{name}</span>
                 <span className={cl.price}>{price}₽</span>
-
-                {stocks ? <button className={cl.buttonBlockInfo} onClick={() => postStocks(user_id, id)}>Выбрать</button> : ''}
-                {allServices ? <button className={cl.buttonBlockInfo} onClick={() => postAllServices(user_id, id)}>Выбрать</button> : ''}
-                {learn ? <button className={cl.buttonBlockInfo} onClick={() => postLearn(user_id, id)}>Выбрать</button> : ''}
-
-
-
+                {/*{stocks ? <button className={cl.buttonBlockInfo} onClick={() => postStocks(user_id, id)}>Выбрать</button> : ''}*/}
+                {/*{allServices ? <button className={cl.buttonBlockInfo} onClick={() => postAllServices(user_id, id)}>Выбрать</button> : ''}*/}
+                {/*{learn ? <button className={cl.buttonBlockInfo} onClick={() => postLearn(user_id, id)}>Выбрать</button> : ''}*/}
             </div>
+
+            {allServices ? <img src={getSrcImg.services(id)} className={cl.imgBlock}/> : ''}
+            {stocks ? <img src={getSrcImg.stocks(id)} className={cl.imgBlock}/> : ''}
+            {learn ? <img src={getSrcImg.learn(id)} className={cl.imgBlock}/> : ''}
         </div>
     );
 };

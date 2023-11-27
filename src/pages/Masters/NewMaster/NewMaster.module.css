@@ -1,0 +1,59 @@
+.newMaster {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(109, 109, 109, 1);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.infoOfMaster {
+    display: flex;
+    gap: 15px;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.ava {
+    width: 80px;
+    height: 80px;
+}
+
+.post {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(76, 76, 76, 1);
+}
+
+.name {
+    font-size: 24px;
+}
+
+.blockNumber {
+    display: flex;
+    gap: 10px;
+}
+
+.timeBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.titleTime {
+    font-size: 16px;
+    color: rgba(76, 76, 76, 1);
+}
+
+.listTime {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
+}

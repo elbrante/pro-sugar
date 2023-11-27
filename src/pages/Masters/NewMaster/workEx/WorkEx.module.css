@@ -1,0 +1,15 @@
+.workEx {
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(21, 16, 77, 1);
+}
+
+.bottomTitle {
+    font-size: 11px;
+    color: rgba(21, 16, 77, 1);
+}
