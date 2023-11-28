@@ -1,16 +1,36 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import cl from "../BlockInfo/BlockInfo.module.css";
 import img from "../../assets/allservices.png";
 import {getSrcImg, postAllServices, postLearn, postStocks} from "../../api/api";
 import {user_id} from "../../api/dataUser";
+import classNames from "classnames";
 
 
-export const BlockInfoPrice = ({name, price, stocks, learn, allServices, id}) => {
+export const BlockInfoPrice = ({
+                                   name,
+                                   price,
+                                   stocks,
+                                   learn,
+                                   allServices,
+                                   id,
+                                   setChoiceId,
+
+                               }) => {
+
+    const [choiceService, setChoiceService] = useState(false)
+
+    function addService() {
+        setChoiceService(!choiceService)
+        setChoiceId(id)
+    }
+
 
     return (
-        <div className={cl.blockInfo}>
-
-
+        <div className={classNames({
+            [cl.blockInfo]: true,
+            [cl.choiceBlock]: choiceService,
+            [cl.notChoiceBlock]: !choiceService
+        })} onClick={addService}>
             <div className={cl.rightBlock}>
                 <span className={cl.title}>{name}</span>
                 <span className={cl.price}>{price}₽</span>

@@ -3,14 +3,19 @@
     background-color: white;
     display: flex;
     border-radius: 20px;
-    border: 1px solid rgba(109, 109, 109, 1);
     padding: 0 0 0 10px;
+}
 
+.choiceBlock {
+    border: 1px solid deeppink;
+}
+
+.notChoiceBlock {
+    border: 1px solid rgba(109, 109, 109, 1);
 }
 
 .imgBlock {
     width: 30%;
-    height: 116px;
     border-bottom-right-radius: 19px;
     border-top-right-radius: 19px;
 }
@@ -21,7 +26,6 @@
     gap: 15px;
     padding: 8px;
     width: 70%;
-
 }
 
 .title {

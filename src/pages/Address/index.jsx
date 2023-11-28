@@ -18,20 +18,25 @@ export const Address = () => {
         })
     }, []);
 
+    function sendAddress() {
+        if (localStorage.getItem('map')) {
+            const choiceAddress = localStorage.getItem('map')
+            console.log(choiceAddress)
+        } else {
+            console.log('Нет адреса')
+        }
+
+    }
+
     return (
         <div className={cl.address}>
             <div className={cl.firstBlock}>
                 <Header text={'Выберите адрес'} link={'/'}/>
-
-                {
-                    addressList.map((data, index) => (
-                        <BlockMap id={data.id} address={data.address} key={index}/>
-                    ))
-                }
-
+                <BlockMap city={'Казань'} street={'ул. Кремлевская, д. 35'}/>
+                <BlockMap city={'Москва'} street={'ул. Тверская, д. 10'}/>
             </div>
             <div className={cl.wrapSkip}>
-                <SendButton>Подтвердить</SendButton>
+                <SendButton onClick={sendAddress}>Подтвердить</SendButton>
             </div>
         </div>
     );

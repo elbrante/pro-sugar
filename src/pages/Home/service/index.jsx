@@ -111,14 +111,15 @@ export const Service = ({setDataService, setPriceList}) => {
             {
                 listSelected.length > 0
                 ?
-                    listSelected.map((elem, index) => (
-
-                        listSelected.at(-1) === elem
-                        ?
-                            <TextBlockInHome key={index}>{elem}</TextBlockInHome>
-                            :
-                            <TextBlockInHome key={index}>{elem},</TextBlockInHome>
-                    ))
+                    <TextBlockInHome>Выбрано уже несколько услуг</TextBlockInHome>
+                    // listSelected.map((elem, index) => (
+                    //
+                    //     listSelected.at(-1) === elem
+                    //     ?
+                    //         <TextBlockInHome key={index}>{elem}</TextBlockInHome>
+                    //         :
+                    //         <TextBlockInHome key={index}>{elem},</TextBlockInHome>
+                    // ))
                     :
                     <TextBlockInHome>Выберите услугу</TextBlockInHome>
 
