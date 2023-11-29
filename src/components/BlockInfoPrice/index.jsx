@@ -14,14 +14,23 @@ export const BlockInfoPrice = ({
                                    allServices,
                                    id,
                                    setChoiceId,
-
+                                   setListChoice,
+                                   listChoice,
                                }) => {
 
     const [choiceService, setChoiceService] = useState(false)
 
     function addService() {
         setChoiceService(!choiceService)
-        setChoiceId(id)
+        if (!choiceService) {
+            setListChoice([...listChoice, id])
+        } else {
+            setListChoice(
+                listChoice.filter(elem => elem !== id)
+            )
+        }
+
+        // setChoiceId(id)
     }
 
 

@@ -13,9 +13,9 @@ const listBlock = [
 ]
 
 export const Learn = () => {
-
     const [learn, setLearn] = useState([])
     const [choiceId, setChoiceId] = useState()
+    const [listChoice, setListChoice] = useState([])
 
     useEffect(() => {
         getLearn().then((res) => {
@@ -24,8 +24,9 @@ export const Learn = () => {
     }, []);
 
     function sendDataLearn() {
-        console.log(choiceId)
-        postLearn(user_id, choiceId)
+        // console.log(choiceId)
+        // postLearn(user_id, choiceId)
+        console.log(listChoice)
     }
 
     return (
@@ -36,8 +37,14 @@ export const Learn = () => {
 
                 {
                     learn.map((data, index) => (
-                        <BlockInfoPrice price={data.price} name={data.nameLearn} learn={true} id={data.id}
-                                        setChoiceId={setChoiceId}/>
+                        <BlockInfoPrice price={data.price}
+                                        name={data.nameLearn}
+                                        learn={true}
+                                        id={data.id}
+                                        setChoiceId={setChoiceId}
+                                        listChoice={listChoice}
+                                        setListChoice={setListChoice}
+                        />
                     ))
                 }
 

@@ -16,6 +16,7 @@ export const BlockMap = ({id, city, street}) => {
         if (!choice) {
             console.log('добавить')
             localStorage.setItem('map', map)
+            console.log(id)
         } else {
             console.log('удалить')
             localStorage.removeItem('map')

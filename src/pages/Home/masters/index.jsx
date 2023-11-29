@@ -23,6 +23,8 @@ export const Masters = ({setDataMasters}) => {
                 })
                 setNameSelectedMaster(master.name)
                 setDataMasters(master.name)
+            }).catch(() => {
+                setNameSelectedMaster('Выберите мастера')
             })
         })
     }, []);

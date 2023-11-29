@@ -16,6 +16,7 @@ const listBlock = [
 export const Stocks = () => {
     const [stocks, setStocks] = useState([])
     const [choiceId, setChoiceId] = useState()
+    const [listChoice, setListChoice] = useState([])
 
     useEffect(() => {
         getStocks().then((res) => {
@@ -24,8 +25,9 @@ export const Stocks = () => {
     }, []);
 
     function sendDataStocks() {
-        console.log(choiceId)
-        postStocks(user_id, choiceId)
+        // console.log(choiceId)
+        // postStocks(user_id, choiceId)
+        console.log(listChoice)
     }
 
     return (
@@ -41,6 +43,8 @@ export const Stocks = () => {
                             stocks={true}
                             id={data.id}
                             setChoiceId={setChoiceId}
+                            listChoice={listChoice}
+                            setListChoice={setListChoice}
                         />
                     })
                 }

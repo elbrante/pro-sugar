@@ -19,8 +19,11 @@ export const Address = ({setDataAddress}) => {
                 const address = listAddress.find((elem) => {
                     return elem.id === addressID
                 })
+                console.log(address.address)
                 setSelectAddress(address.address)
                 setDataAddress(address.address)
+            }).catch(() => {
+                setSelectAddress('')
             })
         })
     }, []);
@@ -34,7 +37,7 @@ export const Address = ({setDataAddress}) => {
     return (
         <WrapperBlock onClick={() => handleClick('/address')}>
 
-                <GrayAddress/>
+            <GrayAddress/>
 
             {
                 selectAddress

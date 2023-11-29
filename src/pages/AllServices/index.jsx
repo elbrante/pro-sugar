@@ -26,6 +26,7 @@ export const AllServices = () => {
     const [choiceId, setChoiceId] = useState()
 
 
+
     useEffect(() => {
         getAllServices().then((res) => {
             setAllServices(res.data)
@@ -33,8 +34,9 @@ export const AllServices = () => {
     }, []);
 
     function sendDataService() {
-        console.log(choiceId)
-        postAllServices(user_id, choiceId)
+        // console.log(choiceId)
+        // postAllServices(user_id, choiceId)
+        console.log(listChoice)
     }
 
 
@@ -52,6 +54,8 @@ export const AllServices = () => {
                                 allServices={true}
                                 id={data.id}
                                 setChoiceId={setChoiceId}
+                                setListChoice={setListChoice}
+                                listChoice={listChoice}
 
                             />
                         )
