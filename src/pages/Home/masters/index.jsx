@@ -1,9 +1,11 @@
 import {useNavigate} from "react-router-dom";
 import cl from "./Masters.module.css";
-import {IAddress, IMaster} from "../../../assets/icons";
+import {GrayMaster, IAddress, IMaster} from "../../../assets/icons";
 import React, {useEffect, useState} from "react";
 import {getDataUser, getMasters} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
+import {WrapperBlock} from "../../../components/WrapperBlock";
+import {TextBlockInHome} from "../../../components/TextBlockInHome";
 
 
 export const Masters = ({setDataMasters}) => {
@@ -21,8 +23,10 @@ export const Masters = ({setDataMasters}) => {
                 })
                 setNameSelectedMaster(master.name)
                 setDataMasters(master.name)
+            }).catch(() => {
+                setNameSelectedMaster('Выберите мастера')
             })
-        })
+        }).catch(() => {})
     }, []);
 
 
@@ -33,18 +37,19 @@ export const Masters = ({setDataMasters}) => {
     }
 
     return (
-        <div className={cl.linkButton} onClick={() => handleClick('/masters')}>
-            <IMaster/>
+        <WrapperBlock onClick={() => handleClick('/masters')}>
+
+            <GrayMaster/>
 
             {
                 nameSelectedMaster
                 ?
-                    <span className={cl.text}>{nameSelectedMaster}</span>
+                    <TextBlockInHome>{nameSelectedMaster}</TextBlockInHome>
                     :
-                    <span className={cl.text}>Выберите мастера</span>
+                    <TextBlockInHome>Выберите мастера</TextBlockInHome>
             }
 
-        </div>
+        </WrapperBlock>
     );
 };
 

@@ -2,29 +2,35 @@
     width: 100%;
     background-color: white;
     display: flex;
-    /*height: 116px;*/
-    border-radius: 8px;
+    border-radius: 20px;
+    padding: 0 0 0 10px;
+}
+
+.choiceBlock {
+    border: 1px solid deeppink;
+}
+
+.notChoiceBlock {
+    border: 1px solid rgba(109, 109, 109, 1);
 }
 
 .imgBlock {
     width: 30%;
-    height: 116px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 19px;
+    border-top-right-radius: 19px;
 }
 
 .rightBlock {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     padding: 8px;
     width: 70%;
-    justify-content: space-between;
 }
 
 .title {
-    font-size: 24px;
-    font-weight: 300;
-    line-height: 22px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .titleStocks {
@@ -44,7 +50,5 @@
 
 .price {
     font-size: 20px;
-    font-weight: 700;
     line-height: 22px;
-    text-align: end;
 }

@@ -1,71 +1,40 @@
+.wrapBlockMap {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid rgba(109, 109, 109, 1);
+}
+
+.wrapNotChoiceMap {
+    border: 1px solid rgba(109, 109, 109, 1);
+}
+
+.wrapChoiceMap {
+    border: 1px solid deeppink;
+}
+
 .blockMap {
     width: 100%;
-    background-color: white;
-    padding: 16px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
 .address {
     font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    color: #996C59;
     white-space: nowrap; /* Запрещаем перенос строк */
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis;
-    width: 80%;
 }
 
-.wrappText {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    color: #996C59;
-    width: 80%;
+.city {
+    font-weight: 600;
+    font-size: 16px;
 }
 
-
-.wrapBlockMap {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
+.wrapIcon svg {
+    height: 35px;
+    width: 40px;
 }
-
-.map {
-    height: 197px;
-    width: 100%;
-    border-radius: 8px;
-}
-
-.blockSecond {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: white;
-    padding: 10px;
-}
-
-
-.buttonBlockInfo {
-    border-radius: 8px;
-    text-align: center;
-    background-color: #996C59;
-    color: white;
-    height: 32px;
-    width: 100%;
-}
-
-.open svg {
-    animation: open-button-animate 1s ease alternate;
-    transform: rotate(180deg);
-}
-
-.close svg {
-    animation: close-button-animate 1s ease alternate;
-    transform: rotate(0deg);
-}
-
-
-

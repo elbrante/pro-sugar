@@ -7,7 +7,9 @@ import img1 from "../../assets/allservices.png";
 import img2 from '../../assets/us.png'
 import img3 from '../../assets/brov.png'
 import {BlockInfoPrice} from "../../components/BlockInfoPrice";
-import {getAllServices} from "../../api/api";
+import {getAllServices, postAllServices} from "../../api/api";
+import {SendButton} from "../../components/SendButton";
+import {user_id} from "../../api/dataUser";
 
 
 const listBlock = [
@@ -20,12 +22,22 @@ const listBlock = [
 export const AllServices = () => {
 
     const [allServices, setAllServices] = useState([])
+    const [listChoice, setListChoice] = useState([])
+    const [choiceId, setChoiceId] = useState()
+
+
 
     useEffect(() => {
         getAllServices().then((res) => {
             setAllServices(res.data)
         })
     }, []);
+
+    function sendDataService() {
+        postAllServices(user_id, choiceId)
+        // console.log(listChoice)
+    }
+
 
     return (
         <div className={cl.allServices}>
@@ -40,13 +52,15 @@ export const AllServices = () => {
                                 key={index}
                                 allServices={true}
                                 id={data.id}
+                                setChoiceId={setChoiceId}
+                                setListChoice={setListChoice}
+                                listChoice={listChoice}
                             />
                         )
                     })
                 }
-
             </div>
-
+            <SendButton onClick={sendDataService}>Подтвердить</SendButton>
         </div>
     );
 };

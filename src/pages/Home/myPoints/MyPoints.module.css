@@ -1,0 +1,23 @@
+.myPoints {
+    width: 70%;
+    height: 54px;
+    border-radius: 80px;
+    background-color: deeppink;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0 30px;
+}
+
+.title {
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.points {
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 34px;
+}

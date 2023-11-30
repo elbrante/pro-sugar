@@ -3,7 +3,9 @@ import cl from './Stocks.module.css'
 import {Header} from "../../components/Header";
 import img1 from "../../assets/allservices.png";
 import {BlockInfoPrice} from "../../components/BlockInfoPrice";
-import {getStocks} from "../../api/api";
+import {getStocks, postStocks} from "../../api/api";
+import {SendButton} from "../../components/SendButton";
+import {user_id} from "../../api/dataUser";
 
 const listBlock = [
     {name: 'Голень + бикини + подмышки', img: img1, price: 1800},
@@ -12,14 +14,20 @@ const listBlock = [
 ]
 
 export const Stocks = () => {
-
     const [stocks, setStocks] = useState([])
+    const [choiceId, setChoiceId] = useState()
+    const [listChoice, setListChoice] = useState([])
 
     useEffect(() => {
         getStocks().then((res) => {
             setStocks(res.data)
         })
     }, []);
+
+    function sendDataStocks() {
+        postStocks(user_id, choiceId)
+        // console.log(listChoice)
+    }
 
     return (
         <div className={cl.allServices}>
@@ -33,10 +41,14 @@ export const Stocks = () => {
                             key={index}
                             stocks={true}
                             id={data.id}
+                            setChoiceId={setChoiceId}
+                            listChoice={listChoice}
+                            setListChoice={setListChoice}
                         />
                     })
                 }
             </div>
+            <SendButton onClick={sendDataStocks}>Подтвердить</SendButton>
         </div>
     );
 };

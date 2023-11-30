@@ -12,14 +12,11 @@ export const BlockInfo = ({name, imgBlock, link}) => {
     }
 
     return (
-        <div className={cl.blockInfo}>
-            <img src={imgBlock} className={cl.imgBlock}/>
+        <div className={cl.blockInfo} onClick={handleClick}>
             <div className={cl.rightBlock}>
                 <span className={cl.title}>{name}</span>
-                <button className={cl.buttonBlockInfo} onClick={handleClick}>
-                    Перейти
-                </button>
             </div>
+            <img src={imgBlock} className={cl.imgBlock}/>
         </div>
     );
 };

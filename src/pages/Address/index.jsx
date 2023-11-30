@@ -3,34 +3,49 @@ import cl from './Address.module.css'
 import {Header} from "../../components/Header";
 import {SkipButton} from "../../components/SkipButton";
 import {BlockMap} from "./BlockMap";
-import {getAddress} from "../../api/api";
+import {getAddress, postAddress, testPostAddress} from "../../api/api";
+import {SendButton} from "../../components/SendButton";
+import {user_id} from "../../api/dataUser";
 
 export const Address = () => {
 
-    const [block, setBlock] = useState(false)
-
+    const [choiceAddress, setChoiceAddress] = useState()
     const [addressList, setAddressList] = useState([])
 
     useEffect(() => {
         getAddress().then((res) => {
             setAddressList(res.data)
+            console.log(res.data)
         })
     }, []);
+
+    function sendAddress() {
+        console.log(choiceAddress)
+        postAddress(user_id, choiceAddress)
+        // testPostAddress(choiceAddress, user_id).then(res => {
+        //     console.log(res)
+        // }).catch(err => console.log(err))
+    }
 
     return (
         <div className={cl.address}>
             <div className={cl.firstBlock}>
-                <Header text={'Адрес'} link={'/'}/>
-
+                <Header text={'Выберите адрес'} link={'/'}/>
                 {
                     addressList.map((data, index) => (
-                        <BlockMap id={data.id} address={data.address} key={index}/>
+                        <BlockMap
+                            id={data.id}
+                            city={data.city}
+                            street={data.street}
+                            key={index}
+                            setChoiceAddress={setChoiceAddress}
+                            choiceAddress={choiceAddress}
+                        />
                     ))
                 }
-
             </div>
             <div className={cl.wrapSkip}>
-                <SkipButton link={'/services'}/>
+                <SendButton onClick={sendAddress}>Подтвердить</SendButton>
             </div>
         </div>
     );
