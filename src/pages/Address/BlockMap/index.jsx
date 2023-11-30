@@ -5,24 +5,20 @@ import classNames from "classnames";
 import {getAddress, postAddress} from "../../../api/api";
 import {user_id} from "../../../api/dataUser";
 
-export const BlockMap = ({id, city, street}) => {
+export const BlockMap = ({id, city, street, setChoiceAddress, choiceAddress}) => {
 
-    const map = city + ', ' + street
 
     const [choice, setChoice] = useState(false)
 
     function setChoiceMap() {
         setChoice(!choice)
         if (!choice) {
-            console.log('добавить')
-            localStorage.setItem('map', map)
             console.log(id)
+            setChoiceAddress(id)
         } else {
-            console.log('удалить')
-            localStorage.removeItem('map')
+            setChoiceAddress(null)
         }
     }
-
 
 
     return (

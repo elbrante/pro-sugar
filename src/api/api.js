@@ -9,7 +9,8 @@ export const getSrcImg = {
     masters: (id) => urlAddressForGetImg + `master_photo/${id}`,
     services: (id) => urlAddressForGetImg + `service_photo/${id}`,
     stocks: (id) => urlAddressForGetImg + `stock_photo/${id}`,
-    learn: (id) => urlAddressForGetImg + `learn_photo/${id}`
+    learn: (id) => urlAddressForGetImg + `learn_photo/${id}`,
+    stockPhoto: (id) => urlAddressForGetImg + `stock_photo/${id}`,
 }
 
 export const getMasters = () => {
@@ -79,6 +80,14 @@ export const postAddress = (address_id, user_id) => {
     })
 }
 
+// export const testPostAddress = async (address_id, user_id) => {
+//     const request = await axios.post('/address', {
+//         address_id: address_id,
+//         user_id: user_id,
+//     })
+//     return request
+// }
+
 export const postAllServices = (user_id, service_id) => {
     axios.post('/allServices', {
         user_id: user_id,
@@ -113,6 +122,11 @@ export const postLearn = (user_id, learn_id) => {
 
 export const getDataUser = (user_id) => {
     const response = axios.get(`/user_state/${user_id}`)
+    return response
+}
+
+export const getHomeStock = () => {
+    const response = axios.get('/homeStock')
     return response
 }
 

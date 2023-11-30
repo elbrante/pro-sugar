@@ -24,9 +24,8 @@ export const Learn = () => {
     }, []);
 
     function sendDataLearn() {
-        // console.log(choiceId)
-        // postLearn(user_id, choiceId)
-        console.log(listChoice)
+        postLearn(user_id, choiceId)
+        // console.log(listChoice)
     }
 
     return (

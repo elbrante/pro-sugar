@@ -25,9 +25,8 @@ export const Stocks = () => {
     }, []);
 
     function sendDataStocks() {
-        // console.log(choiceId)
-        // postStocks(user_id, choiceId)
-        console.log(listChoice)
+        postStocks(user_id, choiceId)
+        // console.log(listChoice)
     }
 
     return (

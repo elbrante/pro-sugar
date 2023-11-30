@@ -34,9 +34,8 @@ export const AllServices = () => {
     }, []);
 
     function sendDataService() {
-        // console.log(choiceId)
-        // postAllServices(user_id, choiceId)
-        console.log(listChoice)
+        postAllServices(user_id, choiceId)
+        // console.log(listChoice)
     }
 
 
@@ -56,7 +55,6 @@ export const AllServices = () => {
                                 setChoiceId={setChoiceId}
                                 setListChoice={setListChoice}
                                 listChoice={listChoice}
-
                             />
                         )
                     })

@@ -23,14 +23,19 @@ export const BlockInfoPrice = ({
     function addService() {
         setChoiceService(!choiceService)
         if (!choiceService) {
-            setListChoice([...listChoice, id])
+            setChoiceId(id)
         } else {
-            setListChoice(
-                listChoice.filter(elem => elem !== id)
-            )
+            setChoiceId(null)
         }
 
-        // setChoiceId(id)
+        //Оставил на будущее, т.к бд будет меняться
+        // if (!choiceService) {
+        //     setListChoice([...listChoice, id])
+        // } else {
+        //     setListChoice(
+        //         listChoice.filter(elem => elem !== id)
+        //     )
+        // }
     }
 
 

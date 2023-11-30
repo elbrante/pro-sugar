@@ -26,7 +26,7 @@ export const Masters = ({setDataMasters}) => {
             }).catch(() => {
                 setNameSelectedMaster('Выберите мастера')
             })
-        })
+        }).catch(() => {})
     }, []);
 
 

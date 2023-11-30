@@ -19,13 +19,13 @@ export const Address = ({setDataAddress}) => {
                 const address = listAddress.find((elem) => {
                     return elem.id === addressID
                 })
-                console.log(address.address)
-                setSelectAddress(address.address)
+                const selectAddress = address.city + ', ' + address.street
+                setSelectAddress(selectAddress)
                 setDataAddress(address.address)
             }).catch(() => {
                 setSelectAddress('')
             })
-        })
+        }).catch(() => {})
     }, []);
 
     const navigate = useNavigate()

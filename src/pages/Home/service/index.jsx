@@ -88,7 +88,7 @@ export const Service = ({setDataService, setPriceList}) => {
 
             })
 
-        })
+        }).catch(() => {})
         setDataService(newArr)
         setPriceList(pricesList)
 
