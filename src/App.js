@@ -8,6 +8,7 @@ import {AllServices} from "./pages/AllServices";
 import {Stocks} from "./pages/Stocks";
 import {Learn} from "./pages/Learn";
 import {Address} from "./pages/Address";
+import {Account} from "./pages/Account/Account";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route path={'stocks'} element={<Stocks/>}/>
                 <Route path={'learn'} element={<Learn/>}/>
                 <Route path={'address'} element={<Address/>}/>
+                <Route path={'account'} element={<Account/>}/>
             </Route>
         </Routes>
     );
