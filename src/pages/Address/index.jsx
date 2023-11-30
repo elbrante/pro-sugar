@@ -21,7 +21,7 @@ export const Address = () => {
 
     function sendAddress() {
         console.log(choiceAddress)
-        postAddress(user_id, choiceAddress)
+        postAddress(choiceAddress, user_id)
         // testPostAddress(choiceAddress, user_id).then(res => {
         //     console.log(res)
         // }).catch(err => console.log(err))

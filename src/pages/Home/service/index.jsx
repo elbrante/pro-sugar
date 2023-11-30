@@ -18,7 +18,6 @@ export const Service = ({setDataService, setPriceList}) => {
     //это временное решение
     if (stock) {
         listSelected.push(stock)
-
     }
 
     if (service) {
@@ -41,6 +40,7 @@ export const Service = ({setDataService, setPriceList}) => {
         const pricesList = []
         getDataUser(user_id).then((res) => {
             // console.log(res.data)
+            console.log(res.data)
             const serviceID = res.data.selected_service_id
             const stockID = res.data.selected_stock_id
             const learnID = res.data.selected_learn_id
@@ -54,11 +54,8 @@ export const Service = ({setDataService, setPriceList}) => {
                     setService(services.name)
                     newArr.push(services.name)
                     pricesList.push(services.description)
-
-
-
                 }
-            })
+            }).catch(() => {setService('')})
 
             getLearn().then((learn) => {
                 const listLearn = learn.data
@@ -72,7 +69,7 @@ export const Service = ({setDataService, setPriceList}) => {
 
                 }
 
-            })
+            }).catch(() => {setLearn('')})
 
             getStocks().then((stock) => {
                 const listStocks = stock.data
@@ -86,7 +83,7 @@ export const Service = ({setDataService, setPriceList}) => {
 
                 }
 
-            })
+            }).catch(() => {setStock('')})
 
         }).catch(() => {})
         setDataService(newArr)

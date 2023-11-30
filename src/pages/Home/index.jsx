@@ -10,7 +10,7 @@ import {Address} from "./address";
 import {Masters} from "./masters";
 import {Service} from "./service";
 import axios from "axios";
-import {tg} from "../../hooks/useTelegram";
+import {tg, useTelegram} from "../../hooks/useTelegram";
 import {SendButton} from "../../components/SendButton";
 import {MyPoints} from "./myPoints";
 import {BlockImg} from "./blockImg";

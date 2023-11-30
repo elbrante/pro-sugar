@@ -23,7 +23,7 @@ export const Address = ({setDataAddress}) => {
                 setSelectAddress(selectAddress)
                 setDataAddress(address.address)
             }).catch(() => {
-                setSelectAddress('')
+
             })
         }).catch(() => {})
     }, []);
@@ -33,6 +33,7 @@ export const Address = ({setDataAddress}) => {
     function handleClick(link) {
         navigate(link)
     }
+    console.log(selectAddress)
 
     return (
         <WrapperBlock onClick={() => handleClick('/address')}>
