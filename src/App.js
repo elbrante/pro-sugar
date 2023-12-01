@@ -1,7 +1,7 @@
 import {Route, Routes} from "react-router-dom";
 import {Layout} from "./pages/Lyout";
 import {Home} from "./pages/Home";
-import {Date} from "./pages/Date";
+import {DatePage} from "./pages/Date";
 import {Masters} from "./pages/Masters";
 import {Services} from "./pages/Services";
 import {AllServices} from "./pages/AllServices";
@@ -17,7 +17,7 @@ function App() {
         <Routes>
             <Route path={'/'} element={<Layout/>}>
                 <Route path={''} element={<Home/>}/>
-                <Route path={'date'} element={<Date/>}/>
+                <Route path={'date'} element={<DatePage/>}/>
                 <Route path={'masters'} element={<Masters/>}/>
                 <Route path={'services'} element={<Services/>}/>
                 <Route path={'allServices'} element={<AllServices/>}/>

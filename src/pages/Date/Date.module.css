@@ -21,3 +21,50 @@
 .wrapSkip {
     margin-bottom: 20px;
 }
+.dates{
+    padding: 20px;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+    -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+    box-shadow: 3px 3px 10px 3px #dddddd;
+    border-radius: 10px;
+}
+
+.dates_months{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.dates_month_current{
+    text-transform: uppercase;
+    font-size: 1.125em;
+}
+
+.dates_month_not_current{
+    color: #9d9d9d;
+}
+
+.dates_item{
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.date_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.active{
+    color: #fff;
+    background-color: #996C59;
+    border-radius: 50px;
+}
+
+.date_item__chosen_day{
+    font-size: 1em;
+    padding: 5px 7px;
+}
