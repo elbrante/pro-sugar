@@ -27,16 +27,23 @@ export const BlockMap = ({id, city, street, setChoiceAddress, choiceAddress}) =>
             [cl.wrapNotChoiceMap]: !choice,
             [cl.wrapChoiceMap]: choice,
         })} onClick={setChoiceMap}>
-
-            <div className={cl.blockMap}>
+            <div className={cl.mainInfo}>
+                <div className={cl.blockMap}>
                 <span className={cl.address}>
                     Город: <span className={cl.city}>{city}</span>
                 </span>
-                <span className={cl.address}>{street}</span>
+                    <span className={cl.address}>{street}</span>
+                </div>
+                <div className={cl.wrapIcon}>
+                    <GrayAddress/>
+                </div>
             </div>
-            <div className={cl.wrapIcon}>
-                <GrayAddress/>
-            </div>
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Aad8b70531ab4b7c9294e67c981d072204813e1cc65f9eb053987b17ec7bc1ed7&amp;source=constructor"
+                frameBorder="0"
+                className={cl.map}
+            >
+            </iframe>
         </div>
 
     );
