@@ -33,9 +33,9 @@
 
 .address {
     font-size: 14px;
-    white-space: nowrap; /* Запрещаем перенос строк */
-    overflow: hidden; /* Обрезаем все, что не помещается в область */
-    text-overflow: ellipsis;
+    /*white-space: nowrap; !* Запрещаем перенос строк *!*/
+    /*overflow: hidden; !* Обрезаем все, что не помещается в область *!*/
+    /*text-overflow: ellipsis;*/
 }
 
 .city {
