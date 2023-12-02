@@ -3,7 +3,7 @@ export const WorkEx = ({years}) => {
     return (
         <div className={cl.workEx}>
             <span className={cl.number}>{years} года</span>
-            <span className={cl.bottomTitle}>Стаж работы</span>
+            <span className={cl.bottomTitle}>Опыт работы</span>
         </div>
     );
 };

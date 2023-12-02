@@ -27,7 +27,7 @@ export const NewMaster = ({experience, listTime, name, score, id, setChoiceID}) 
             <div className={cl.infoOfMaster}>
                 <img className={cl.ava} src={getSrcImg.masters(id)}/>
                 <div className={cl.mainInfo}>
-                    <span className={cl.post}>Мастер-колорист</span>
+                    <span className={cl.post}>Топ мастер</span>
                     <span className={cl.name}>{name}</span>
                     <div className={cl.blockNumber}>
                         <ScoreJob score={score}/>

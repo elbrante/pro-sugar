@@ -1,6 +1,6 @@
 const tg = window.Telegram.WebApp;
 const user = tg.initDataUnsafe?.user;
-export let user_id = user?.id
+export let user_id = 1
 export let username = user?.username
 
 // if (!user?.id) {
