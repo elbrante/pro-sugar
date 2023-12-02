@@ -38,7 +38,7 @@ export const Date = () => {
             <GrayDate/>
             {
                 date.day ?
-                    <TextBlockInHome>{date.day}, {date.month}</TextBlockInHome>
+                    <TextBlockInHome>{date.day}, {date.month}, {localStorage.getItem('currentTime')}</TextBlockInHome>
                     :
                     <TextBlockInHome>Выберите дату</TextBlockInHome>
             }

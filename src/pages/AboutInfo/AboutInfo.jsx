@@ -14,23 +14,23 @@ export const AboutInfo = () => {
                 <div className={cl.blockInfo}>
                     <div className={cl.wrappIcon}>
                         <ILocal/>
-                        <TextInfo firstTitle={'Адрес:'} secondTitle={'ул.Петербургская, 1, Казань'}/>
+                        <TextInfo firstTitle={'Адрес:'} secondTitle={'г. Тольятти, ул. 40 лет Победы 50 б, ТЦ «Чайка», 3 этаж, офис 333'}/>
                     </div>
                     <div className={cl.wrappIcon}>
                         <IPhoneLittle/>
-                        <TextInfo firstTitle={'Телефон: '} secondTitle={'+7 (939) 379 20 63'}/>
+                        <TextInfo firstTitle={'Телефон: '} secondTitle={'+7 (987) 96-46-776'}/>
                     </div>
                     <div className={cl.wrappIcon}>
                         <IWebSite/>
-                        <TextInfo firstTitle={'Вебсайт: '} secondTitle={'messaeres.tilda.ws'}/>
+                        <TextInfo firstTitle={'Вебсайт: '} secondTitle={''}/>
                     </div>
                     <div className={cl.wrappIcon}>
                         <ITelegram/>
-                        <TextInfo firstTitle={'Телеграм: '} secondTitle={'@messa_eres_ai_bot'}/>
+                        <TextInfo firstTitle={'Телеграм: '} secondTitle={'@prosugar_records_bot'}/>
                     </div>
                     <div className={cl.wrappIcon}>
                         <ISupport/>
-                        <TextInfo firstTitle={'Тех. поддержка:'} secondTitle={'@messa_eres_ai_bot'}/>
+                        <TextInfo firstTitle={'Тех. поддержка:'} secondTitle={'@prosugar_records_bot'}/>
                     </div>
                 </div>
             </div>

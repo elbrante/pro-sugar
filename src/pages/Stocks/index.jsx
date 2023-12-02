@@ -6,6 +6,7 @@ import {BlockInfoPrice} from "../../components/BlockInfoPrice";
 import {getStocks, postStocks} from "../../api/api";
 import {SendButton} from "../../components/SendButton";
 import {user_id} from "../../api/dataUser";
+import {useNavigate} from "react-router-dom";
 
 const listBlock = [
     {name: 'Голень + бикини + подмышки', img: img1, price: 1800},
@@ -24,9 +25,11 @@ export const Stocks = () => {
         })
     }, []);
 
+    const nav = useNavigate()
+
     function sendDataStocks() {
         postStocks(user_id, choiceId)
-        // console.log(listChoice)
+        nav('/')
     }
 
     return (

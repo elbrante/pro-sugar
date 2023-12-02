@@ -35,7 +35,7 @@ export const Service = ({setDataService, setPriceList}) => {
 
     useEffect(() => {
         //newArr и setArr почему-то не выводятся, хотя в консоле данные есть. Пока решил сделать через listSelected
-
+    
         const newArr = []
         const pricesList = []
         getDataUser(user_id).then((res) => {
@@ -88,8 +88,6 @@ export const Service = ({setDataService, setPriceList}) => {
         }).catch(() => {})
         setDataService(newArr)
         setPriceList(pricesList)
-
-
 
     }, []);
 

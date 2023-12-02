@@ -10,6 +10,7 @@ import {BlockInfoPrice} from "../../components/BlockInfoPrice";
 import {getAllServices, postAllServices} from "../../api/api";
 import {SendButton} from "../../components/SendButton";
 import {user_id} from "../../api/dataUser";
+import {useNavigate} from "react-router-dom";
 
 
 const listBlock = [
@@ -33,8 +34,15 @@ export const AllServices = () => {
         })
     }, []);
 
+    const nav = useNavigate()
+
+    function handleClick(link) {
+        nav(link)
+    }
+
     function sendDataService() {
-        postAllServices(choiceId, user_id)
+        postAllServices(user_id, choiceId)
+        handleClick('/')
         // console.log(listChoice)
     }
 

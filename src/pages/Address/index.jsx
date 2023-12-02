@@ -6,11 +6,18 @@ import {BlockMap} from "./BlockMap";
 import {getAddress, postAddress, testPostAddress} from "../../api/api";
 import {SendButton} from "../../components/SendButton";
 import {user_id} from "../../api/dataUser";
+import {useNavigate} from "react-router-dom";
 
 export const Address = () => {
 
     const [choiceAddress, setChoiceAddress] = useState()
     const [addressList, setAddressList] = useState([])
+
+    const nav = useNavigate()
+
+    function handleClick(link) {
+        nav(link)
+    }
 
     useEffect(() => {
         getAddress().then((res) => {
@@ -25,6 +32,7 @@ export const Address = () => {
         // testPostAddress(choiceAddress, user_id).then(res => {
         //     console.log(res)
         // }).catch(err => console.log(err))
+        handleClick('/');
     }
 
     return (

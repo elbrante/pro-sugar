@@ -14,13 +14,7 @@ import {tg, useTelegram} from "../../hooks/useTelegram";
 import {SendButton} from "../../components/SendButton";
 import {MyPoints} from "./myPoints";
 import {BlockImg} from "./blockImg";
-
-const listButton = [
-    {text: 'Выберите дату', link: '/date', icon: <IDate/>},
-    {text: 'Выберите адрес', link: '/address', icon: <IAddress/>},
-    {text: 'Выберите мастера', link: '/masters', icon: <IMaster/>},
-    {text: 'Выберите услугу', link: '/services', icon: <IService/>},
-]
+import {getAddress} from "../../api/api";
 
 export const Home = () => {
 
@@ -37,8 +31,24 @@ export const Home = () => {
     const [dataService, setDataService] = useState([])
     const [priceList, setPriceList] = useState([])
 
+    const [selectAddress, setSelectAddress] = useState('');
 
+    useEffect(() => {
+        getDataUser(user_id).then((res) => {
+            const addressID = res.data.selected_address_id
+            getAddress().then((resAddress) => {
+                const listAddress = resAddress.data
+                const address = listAddress.find((elem) => {
+                    return elem.id === addressID
+                })
+                const selectAddress = address.city + ', ' + address.street
+                setSelectAddress(selectAddress)
+                setDataAddress(address.address)
+            }).catch(() => {
 
+            })
+        }).catch(() => {})
+    }, []);
 
     function send_push(address, masters, service, priceList) {
         let sumPrice = 0
@@ -55,10 +65,13 @@ export const Home = () => {
             }
         }
 
+        console.log(address)
+
         var userMessage = ""
-        userMessage += "1. Адрес: " + address + "\n"
+        userMessage += "1. Адрес: " + selectAddress + "\n"
         userMessage += "2. Мастер: " + masters + "\n"
         userMessage += "3. Услуги: " + serviceList + "\n"
+        userMessage += "4. Дата: " + localStorage.getItem('currentDay') + ", " + localStorage.getItem('currentMonth') + ", " + localStorage.getItem('currentTime') + "\n"
         userMessage += "\nИтого: " + sumPrice
         // userMessage += "\n\nБонусы пользователя: " + bonuses.toString(); - откуда Бонусы брать?
         userMessage += "\nУровень пользователя: Любитель (Баллы за заказ: " + (sumPrice * 0.05).toString() + ")";
@@ -81,8 +94,7 @@ export const Home = () => {
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
 
-        // tg.showAlert("Спасибо за заказ!\nСкоро с вами свяжется менеджер для подтверждения");
-        // - нет такой функции showAlert
+        tg.showAlert("Спасибо за заказ!\nСкоро с вами свяжется менеджер для подтверждения");
 
 
     }

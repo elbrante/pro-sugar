@@ -1,14 +1,11 @@
 import cl from './TimePerDay.module.css';
 import classNames from "classnames";
 
-export const TimePerDay = ({ times, title}) => {
-
-
+export const TimePerDay = ({ times, title, activeTime, setActiveTime }) => {
     return (
         <div className={cl.time_day}>
             <p>{title}</p>
             <ul>
-
                 {
                     times === undefined || null
                         ?
@@ -17,12 +14,11 @@ export const TimePerDay = ({ times, title}) => {
                         times?.map((time, index) => {
                             return (
                                 <li key={index}
-                                    className={classNames({[cl.active]: localStorage.getItem('currentTime') === time})}
+                                    className={classNames({ [cl.active]: activeTime === time })}
                                     onClick={() => {
-                                        localStorage.setItem('currentTime', time)
-                                    }
-
-                                    }>
+                                        localStorage.setItem('currentTime', time);
+                                        setActiveTime(time);
+                                    }}>
                                     {time}
                                 </li>
                             )

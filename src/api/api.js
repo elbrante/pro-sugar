@@ -97,6 +97,8 @@ export const postAllServices = (user_id, service_id) => {
     }).catch((res) => {
         console.log(res.error)
     })
+
+    console.log(user_id, service_id)
 }
 export const postStocks = (user_id, stock_id) => {
     axios.post('/stocks', {

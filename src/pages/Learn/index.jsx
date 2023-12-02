@@ -6,6 +6,7 @@ import img1 from "../../assets/learn.png";
 import {getLearn, postLearn} from "../../api/api";
 import {SendButton} from "../../components/SendButton";
 import {user_id} from "../../api/dataUser";
+import {useNavigate} from "react-router-dom";
 
 
 const listBlock = [
@@ -23,9 +24,16 @@ export const Learn = () => {
         })
     }, []);
 
+    const nav = useNavigate()
+
+    function handleClick(link) {
+        nav(link)
+    }
+
     function sendDataLearn() {
         postLearn(user_id, choiceId)
         // console.log(listChoice)
+        handleClick('/')
     }
 
     return (

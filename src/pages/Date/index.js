@@ -1,25 +1,25 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import cl from './Date.module.css'
 import classNames from "classnames";
 
-import {TimePerDay} from "../../components/TimePerDay";
-import {Header} from "../../components/Header";
-import {SkipButton} from "../../components/SkipButton";
+import { TimePerDay } from "../../components/TimePerDay";
+import { Header } from "../../components/Header";
+import { SkipButton } from "../../components/SkipButton";
 
 export const DatePage = () => {
     const [chosenDay, setChosenDay] = useState(new Date().getDate());
 
     const timePerDay = {
-        17: {
+        2: {
             morning: ['10:00', '11:00'],
             day: ['12:00', '13:00'],
             evening: ['19:00', '21:00'],
         },
-        18: {
+        3: {
             morning: ['10:00', '11:00'],
             day: ['12:00', '13:00'],
             evening: ['20:00', '22:00'],
-        }
+        },
     }
 
     const daysOfWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
@@ -44,11 +44,12 @@ export const DatePage = () => {
         days.push(date);
     }
 
+    const [activeTime, setActiveTime] = useState(localStorage.getItem('currentTime'));
 
     return (
         <div className={cl.date}>
             <div className={cl.firstBlock}>
-                <Header link={'/'} text={'Дата и время'}/>
+                <Header link={'/'} text={'Дата и время'} />
                 <div className={cl.wrapperDateCalendar}>
                     <section className={cl.dates}>
                         <div className={cl.dates_months}>
@@ -76,28 +77,37 @@ export const DatePage = () => {
                                         }}>
                                         <span>{dayOfWeekName}</span>
                                         <button className={classNames(cl.date_item__chosen_day,
-                                            {[cl.active]: chosenDay === dayOfMonth})}>{dayOfMonth}</button>
+                                            { [cl.active]: chosenDay === dayOfMonth })}>{dayOfMonth}</button>
                                     </li>
                                 );
                             })}
                         </ul>
                     </section>
-                    <TimePerDay
-                        times={timePerDay[chosenDay]?.morning}
-                        title="Утро"
-                    />
-                    <TimePerDay times={timePerDay[chosenDay]?.day}
-                                title="День"
-                    />
-                    <TimePerDay
-                        times={timePerDay[chosenDay]?.evening}
-                        title="Вечер"
-                    />
+                    <>
+                        <TimePerDay
+                            times={timePerDay[chosenDay]?.morning}
+                            title="Утро"
+                            activeTime={activeTime}
+                            setActiveTime={setActiveTime}
+                        />
+                        <TimePerDay
+                            times={timePerDay[chosenDay]?.day}
+                            title="День"
+                            activeTime={activeTime}
+                            setActiveTime={setActiveTime}
+                        />
+                        <TimePerDay
+                            times={timePerDay[chosenDay]?.evening}
+                            title="Вечер"
+                            activeTime={activeTime}
+                            setActiveTime={setActiveTime}
+                        />
+                    </>
 
                 </div>
             </div>
             <div className={cl.wrapSkip}>
-                <SkipButton link={'/address'}/>
+                <SkipButton link={'/address'} />
             </div>
         </div>
     );
