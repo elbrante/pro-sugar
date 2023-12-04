@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import cl from './Date.module.css'
 import classNames from "classnames";
 
@@ -22,6 +22,8 @@ export const DatePage = () => {
         },
     }
 
+    const [activeTime, setActiveTime] = useState(localStorage.getItem('currentTime'));
+
     const daysOfWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
 
     const currentDate = new Date();
@@ -44,12 +46,11 @@ export const DatePage = () => {
         days.push(date);
     }
 
-    const [activeTime, setActiveTime] = useState(localStorage.getItem('currentTime'));
 
     return (
         <div className={cl.date}>
             <div className={cl.firstBlock}>
-                <Header link={'/'} text={'Дата и время'} />
+                <Header link={'/'} text={'Дата и время'}/>
                 <div className={cl.wrapperDateCalendar}>
                     <section className={cl.dates}>
                         <div className={cl.dates_months}>
