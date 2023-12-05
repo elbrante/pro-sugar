@@ -94,6 +94,31 @@ export const Home = () => {
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
 
+
+        
+
+        const botTokenUser = "6378113613:AAGuQPO2rUJvXjFe9Mi4iljzOIyJ4RqiQ0g";
+
+        const tg = window.Telegram.WebApp
+        
+
+        const chatIdUser = tg.initDataUnsafe?.user?.id;
+        console.log(chatIdUser)
+
+        var userMessage = ""
+        userMessage += "1. Адрес: " + selectAddress + "\n"
+        userMessage += "2. Мастер: " + masters + "\n"
+        userMessage += "3. Услуги: " + serviceList + "\n"
+        userMessage += "4. Дата: " + localStorage.getItem('currentDay') + ", " + localStorage.getItem('currentMonth') + ", " + localStorage.getItem('currentTime') + "\n"
+        userMessage += "\nИтого: " + sumPrice
+
+        axios.post(`https://api.telegram.org/bot${botTokenUser}/sendMessage`, {
+            chat_id: chatIdUser,
+            text: "Ваш заказ принят!\n\n" + userMessage
+        })
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));
+
         tg.showAlert("Спасибо за заказ!\nСкоро с вами свяжется менеджер для подтверждения");
 
 

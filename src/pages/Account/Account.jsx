@@ -12,7 +12,7 @@ export const Account = () => {
     const [phoneNum, setPhoneNum] = useState('');
     const [bonuses, setBonuses] = useState(500);
 
-    const backend_url = "https://thx-api-server.ru"
+    const backend_url = "https://thx-api-server.ru/prosugar-black"
 
     useEffect(() => {
 
