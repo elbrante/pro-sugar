@@ -77,7 +77,7 @@ export const Home = () => {
         userMessage += "\nУровень пользователя: Любитель (Баллы за заказ: " + (sumPrice * 0.05).toString() + ")";
 
 
-        const botTokenAdmin = '6476318398:AAEqP1F3hfLrDikZtSb2GkGaIhVoRQ9z5f0';
+        const botTokenAdmin = '6702522241:AAGB9msWfAtVeQoEmzWaCoRHehdjqd1fyIM';
         const chatId1 = '742596099';
         const chatId2 = '748332473';
         axios.post(`https://api.telegram.org/bot${botTokenAdmin}/sendMessage`, {
@@ -97,7 +97,7 @@ export const Home = () => {
 
         
 
-        const botTokenUser = "6378113613:AAGuQPO2rUJvXjFe9Mi4iljzOIyJ4RqiQ0g";
+        const botTokenUser = "6584496107:AAG6UeXF5w54azHysAchzpaYPvXbyjATj1Q";
 
         const tg = window.Telegram.WebApp
         
