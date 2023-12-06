@@ -55,16 +55,19 @@ export const Home = () => {
             }
         }
 
+        console.log(address)
+
         var userMessage = ""
-        userMessage += "1. Адрес: " + address + "\n"
+        userMessage += "1. Адрес: " + selectAddress + "\n"
         userMessage += "2. Мастер: " + masters + "\n"
         userMessage += "3. Услуги: " + serviceList + "\n"
+        userMessage += "4. Дата: " + localStorage.getItem('currentDay') + ", " + localStorage.getItem('currentMonth') + ", " + localStorage.getItem('currentTime') + "\n"
         userMessage += "\nИтого: " + sumPrice
         // userMessage += "\n\nБонусы пользователя: " + bonuses.toString(); - откуда Бонусы брать?
         userMessage += "\nУровень пользователя: Любитель (Баллы за заказ: " + (sumPrice * 0.05).toString() + ")";
 
 
-        const botTokenAdmin = '6476318398:AAEqP1F3hfLrDikZtSb2GkGaIhVoRQ9z5f0';
+        const botTokenAdmin = '6584496107:AAG6UeXF5w54azHysAchzpaYPvXbyjATj1Q';
         const chatId1 = '742596099';
         const chatId2 = '748332473';
         axios.post(`https://api.telegram.org/bot${botTokenAdmin}/sendMessage`, {
@@ -81,8 +84,32 @@ export const Home = () => {
             .then(response => console.log(response.data))
             .catch(error => console.error(error));
 
-        // tg.showAlert("Спасибо за заказ!\nСкоро с вами свяжется менеджер для подтверждения");
-        // - нет такой функции showAlert
+
+        
+
+        const botTokenUser = "6702522241:AAGB9msWfAtVeQoEmzWaCoRHehdjqd1fyIM";
+
+        const tg = window.Telegram.WebApp
+        
+
+        const chatIdUser = tg.initDataUnsafe?.user?.id;
+        console.log(chatIdUser)
+
+        var userMessage = ""
+        userMessage += "1. Адрес: " + selectAddress + "\n"
+        userMessage += "2. Мастер: " + masters + "\n"
+        userMessage += "3. Услуги: " + serviceList + "\n"
+        userMessage += "4. Дата: " + localStorage.getItem('currentDay') + ", " + localStorage.getItem('currentMonth') + ", " + localStorage.getItem('currentTime') + "\n"
+        userMessage += "\nИтого: " + sumPrice
+
+        axios.post(`https://api.telegram.org/bot${botTokenUser}/sendMessage`, {
+            chat_id: chatIdUser,
+            text: "Ваш заказ принят!\n\n" + userMessage
+        })
+            .then(response => console.log(response.data))
+            .catch(error => console.error(error));
+
+        tg.showAlert("Спасибо за заказ!\nСкоро с вами свяжется менеджер для подтверждения");
 
 
     }
