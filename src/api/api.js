@@ -1,9 +1,9 @@
 import axios, * as others from 'axios';
 import {user_id} from "./dataUser";
 
-axios.defaults.baseURL = 'https://thx-api-server.ru/prosugar'
+axios.defaults.baseURL = 'https://thx-api-server.ru/prosugar-black'
 
-const urlAddressForGetImg = 'https://thx-api-server.ru/prosugar/'
+const urlAddressForGetImg = 'https://thx-api-server.ru/prosugar-black/'
 
 export const getSrcImg = {
     masters: (id) => urlAddressForGetImg + `master_photo/${id}`,
