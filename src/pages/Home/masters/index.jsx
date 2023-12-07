@@ -40,8 +40,9 @@ export const Masters = ({setDataMasters}) => {
 
     return (
         <WrapperBlock onClick={() => handleClick('/masters')}>
-
-            <GrayMaster/>
+            <div className={cl.iconMaster}>
+                <GrayMaster/>
+            </div>
 
             {
                 nameSelectedMaster

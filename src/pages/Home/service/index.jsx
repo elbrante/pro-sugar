@@ -35,7 +35,7 @@ export const Service = ({setDataService, setPriceList}) => {
 
     useEffect(() => {
         //newArr и setArr почему-то не выводятся, хотя в консоле данные есть. Пока решил сделать через listSelected
-    
+
         const newArr = []
         const pricesList = []
         getDataUser(user_id).then((res) => {
@@ -55,7 +55,9 @@ export const Service = ({setDataService, setPriceList}) => {
                     newArr.push(services.name)
                     pricesList.push(services.description)
                 }
-            }).catch(() => {setService('')})
+            }).catch(() => {
+                setService('')
+            })
 
             getLearn().then((learn) => {
                 const listLearn = learn.data
@@ -69,7 +71,9 @@ export const Service = ({setDataService, setPriceList}) => {
 
                 }
 
-            }).catch(() => {setLearn('')})
+            }).catch(() => {
+                setLearn('')
+            })
 
             getStocks().then((stock) => {
                 const listStocks = stock.data
@@ -83,14 +87,16 @@ export const Service = ({setDataService, setPriceList}) => {
 
                 }
 
-            }).catch(() => {setStock('')})
+            }).catch(() => {
+                setStock('')
+            })
 
-        }).catch(() => {})
+        }).catch(() => {
+        })
         setDataService(newArr)
         setPriceList(pricesList)
 
     }, []);
-
 
 
     const navigate = useNavigate()
@@ -101,11 +107,13 @@ export const Service = ({setDataService, setPriceList}) => {
 
     return (
         <WrapperBlock onClick={() => handleClick('/services')}>
-            <GrayService/>
+            <div className={cl.iconService}>
+                <GrayService/>
+            </div>
 
             {
                 listSelected.length > 0
-                ?
+                    ?
                     <TextBlockInHome>Выбрано уже несколько услуг</TextBlockInHome>
                     // listSelected.map((elem, index) => (
                     //
@@ -117,7 +125,6 @@ export const Service = ({setDataService, setPriceList}) => {
                     // ))
                     :
                     <TextBlockInHome>Выберите услугу</TextBlockInHome>
-
             }
 
         </WrapperBlock>

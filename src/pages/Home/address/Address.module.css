@@ -22,3 +22,10 @@
     -webkit-box-orient: vertical;
 }
 
+.iconAddress svg {
+    width: 34px;
+}
+
+.wrapText {
+    width: 60%;
+}

@@ -16,3 +16,7 @@
     font-weight: 500;
     line-height: 18px;
 }
+
+.iconDate svg {
+    width: 34px;
+}

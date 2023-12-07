@@ -16,3 +16,11 @@
     font-weight: 500;
     line-height: 18px;
 }
+
+.iconService svg {
+    width: 34px;
+}
+
+.wrapTextBlock {
+    width: 60%;
+}
