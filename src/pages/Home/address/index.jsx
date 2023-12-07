@@ -47,10 +47,10 @@ export const Address = ({setDataAddress}) => {
                     <div className={cl.wrapText}>
                         <TextBlockInHome>{selectAddress}</TextBlockInHome>
                     </div>
+
                     :
                     <TextBlockInHome>Выберите адрес</TextBlockInHome>
             }
         </WrapperBlock>
     );
 };
-
