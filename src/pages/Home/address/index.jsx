@@ -37,13 +37,16 @@ export const Address = ({setDataAddress}) => {
 
     return (
         <WrapperBlock onClick={() => handleClick('/address')}>
-
-            <GrayAddress/>
+            <div className={cl.iconAddress}>
+                <GrayAddress/>
+            </div>
 
             {
                 selectAddress
                     ?
-                    <TextBlockInHome>{selectAddress}</TextBlockInHome>
+                    <div className={cl.wrapText}>
+                        <TextBlockInHome>{selectAddress}</TextBlockInHome>
+                    </div>
                     :
                     <TextBlockInHome>Выберите адрес</TextBlockInHome>
             }

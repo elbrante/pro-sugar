@@ -35,7 +35,9 @@ export const Date = () => {
 
     return (
         <WrapperBlock onClick={() => handleClick('/date')}>
-            <GrayDate/>
+            <div className={cl.iconDate}>
+                <GrayDate/>
+            </div>
             {
                 date.day ?
                     <TextBlockInHome>{date.day}, {date.month}</TextBlockInHome>

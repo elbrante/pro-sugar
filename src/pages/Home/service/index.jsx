@@ -103,7 +103,9 @@ export const Service = ({setDataService, setPriceList}) => {
 
     return (
         <WrapperBlock onClick={() => handleClick('/services')}>
-            <GrayService/>
+            <div className={cl.iconService}>
+                <GrayService/>
+            </div>
 
             {
                 listSelected.length > 0
