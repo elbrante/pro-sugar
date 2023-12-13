@@ -130,7 +130,7 @@ export const Home = () => {
                 <BlockImg/>
                 <div className={cl.buttonGroup}>
                     <MyPoints/>
-                    <Masters setDataMasters={setDataMasters}/>
+                    {/*<Masters setDataMasters={setDataMasters}/>*/}
                     <Date/>
                     <Service setDataService={setDataService} setPriceList={setPriceList}/>
                     <Address setDataAddress={setDataAddress}/>

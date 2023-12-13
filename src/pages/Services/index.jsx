@@ -8,6 +8,7 @@ import {BlockInfo} from "../../components/BlockInfo";
 import img1 from '../../assets/allservices.png'
 import img2 from '../../assets/stocks.png'
 import img3 from '../../assets/learn.png'
+import {BlockInfoPrice} from "../../components/BlockInfoPrice";
 
 const listBlock = [
     {name: 'Все услуги', link: '/allServices', img: img1},
@@ -19,11 +20,12 @@ export const Services = () => {
         <div className={cl.services}>
             <div className={cl.firstBlock}>
                 <Header text={'Услуги'} link={'/address'}/>
-                {
-                    listBlock.map((data, index) => {
-                        return <BlockInfo name={data.name} link={data.link} imgBlock={data.img} key={index}/>
-                    })
-                }
+                {/*{*/}
+                {/*    listBlock.map((data, index) => {*/}
+                {/*        return <BlockInfo name={data.name} link={data.link} imgBlock={data.img} key={index}/>*/}
+                {/*    })*/}
+                {/*}*/}
+                <BlockInfoPrice name={'Солярий'} price={25}/>
 
             </div>
             <div className={cl.wrapSkip}>
